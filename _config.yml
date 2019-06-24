@@ -16,7 +16,7 @@ theme_settings:
   gravatar: # Email MD5 hash
 
   # Header and footer text
-  header_text: iOS Apps, Deep Learning, and ... Pizza ? 
+  header_text: iOS Apps, Deep Learning, and Pizza ? 
   header_feature_image: assets/img/pexels/databites-hero.png
   footer_text: >
     Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>

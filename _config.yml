@@ -1,9 +1,9 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "https://arensc.github.io/"
+url: "https://arensc.github.io"
 title: Databites Labs # site's title
 description: "A Blog where I try and sound smart, store notes, and rant about the Software Industry. 
-              Discuss new developments about iOS, Swift 3.0, Swift 4.2, Swift 5.0.
+              Discuss new developments about iOS, Swift 3.0, Swift 4.2, Swift 5.0, Swift UI, Custom UI Etc.
               Discuss Deep Learning developments and Python, MatplotLib, Tensorflow, Training Models.
               Discuss The state of the art of Pizza making and the Business." # used by search engines
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 feature-img: "assets/img/about-iphone.jpg"
 tags: [About, Archive]

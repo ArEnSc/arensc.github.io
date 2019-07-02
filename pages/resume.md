@@ -12,4 +12,4 @@ For recruiters it usually can I get it as a Doc. <br>
 For hiring manager technical leads it is can I get it as a PDF.<br>
 
 Here is my [resume in pdf format]({{ site.url }}/download/michael-chung-resume.pdf) <br>
-Here is my [resume in doc format]({{ site.url }}/download/michael-chung-resume-docx.docx) <br>
+Here is my [resume in doc format]({{ site.url }}/download/michael-chung-resume.docx) <br>

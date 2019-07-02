@@ -1,0 +1,112 @@
+---
+layout: post
+title: Practical Things to do know about Deep Learning when using your frameworks
+tags: [Deep Learning, Frameworks, Notes]
+excerpt_separator: <!--more-->
+---
+
+Here are some practical things to remember when using your deep learning frameworks.
+
+<!--more-->
+
+1.Number of Steps in an Epoch
+
+An epoch means one iteration, over the all of the training data.
+
+If you have 20,000 samples and a batch size of 100 then the epoch should container 20,000/100 or 200 steps.
+
+Simple Example:
+Mini batch sgd
+You have 200 samples and you decide to batch by 5 samples.
+One epoch is going to contain 200 samples because an epoch is a 1 full forward and backward pass, through the model.
+You want to do 1000 epoches, what are the number of steps?
+So:
+
+200 samples / batch of 5 = 40 Steps
+number of epochs 1000 = 40,000 Steps
+
+1. Training Loss vs Validation Loss
+
+The training loss is calculated over the (entire training dataset)*. Likewise, the validation loss is calculated over the (entire validation dataset)*, 
+
+* gradience decent strategy used depending on the method used.
+
+The Validation Loss is the computation of the loss on the validation set. use dropout of 0.5
+
+
+Overfitting - Training loss lower than validation loss means network might be overfitting.
+Increase model size, # layers
+
+Underfitting - VAlidation and training error high
+
+good fit = valdaiton error low, and slight higher than training error
+
+unknown fit vlidation error low, training error high.
+
+2. General Process of Gradient Descent
+a.Compute the score of the model function, one or many or all training examples. Usually ends up being a probability vector at the end of the computation if classification.
+
+b.Compute the loss of the computed score examples . (Loss is independent of the Scores) Display the loss
+
+c.Use the score (or probs) vector and compute the gradient of one or many or all of the training examples, divide the gradient by the number of examples. As per the data loss function 1/n Sigma Li. use this as the global gradient to backprop.
+
+d.Take the gradient and multiply by the global gradient and perform the update rule, on each weight matrix, that compute the gradient with.
+
+General Steps for Optimization
+
+3.How and When are the parameters or weights are updated?
+
+It is primarly used as an indicator of where we are in training lower loss means closer to the minima.
+
+Average the loss together if many or all.
+make sure you add the regularlization loss as well to have the total.
+use the loss to compute the gradient
+
+Gradient Descent
+This is an iterative optimization algorithm for finding the minimum of a function. The algorithm takes steps proportional to the negative gradient of the function at the current point [1]. In deep learning neural networks are trained by defining a loss function and optimizing the parameters of the network to obtain the minimum of the function. the optimization is dne using the gradient descent algorithm which operates in these two steps:
+
+Gradient Descent: You calculate the loss function by passing the whole data set through the loss function. Calculate the loss per epoch. Therefore the you the weights per epoch.
+
+
+Stochastic Gradient Decent: You calculate the loss per training sample and there for update the weights per sample. Disadvantage is that this algorithm is that performance cannot be guaranteed due to oscillation and of the gradient descent, so it might not converge to the find the minimum.
+
+Advantages:
+
+1. Easier to fit into memory doe to single training sample being processed.
+2. computational fast as only one sample is processed at a time
+3. larger data sets it can converge fast as we update parameters more quickly
+4. frequent updates the steps are taken toward the minima of the loss function have oscillations which can help getting out of a local minimums of the loss function, when the computed position turns out to be the local minimium.
+
+Disavantages:
+Frequent updates results in noisy steps towards minima, this can lead gradient descrnt into other directions.
+
+2. may take a longer time to achieve this because of noisy steps.
+3. frequent updates are expensive
+4. you lose vectorized ops as it only works with one sample at a time.
+
+
+Batch Gradient Descent: This algorithm works like gradient descent samples in the training set and updates only once all have been through one epoch, but batches the data, it averages the losses of each batch and sums them together, takes the gradient and updates the weights them.
+
+Advantages:
+Fewer updates to the model since gradient computation is only run per epoch.
+The decreased update frequency results in a more stable error gradient and may result in a more stable convergence on some problems.
+The separation of the calculation of prediction errors and the model update lends the algorithm to parallel processing based implementations.
+
+Disavatage:
+
+The more stable error gradient may result in premature convergence of the model to a less optimal set of parameters.
+
+The updates at the end of the training epoch require the additional complexity of accumulating prediction errors across all training examples.
+Commonly, batch gradient descent is implemented in such a way that it requires the entire training dataset in memory and available to the algorithm.
+
+Model updates, and in turn training speed, may become very slow for large datasets.
+
+Mini batch gradient descent
+
+splits training the dataset into small batches that used to calculate the model error and update model coefficients. sum the gradient over the mini batch which reduces the varicence of the gradient.
+
+Uses power of 2 batche sizes
+
+typical behavbior small values give a learning process that converges quickly with tnoise in the training process
+large values conver slowly with acfuracte estimate of the erro gradient.
+

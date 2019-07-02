@@ -16,12 +16,14 @@ After reading the gist of the article, I started looking into the paper.
 The purpose of this post is to give you a quick summary and overview of how this algorithm works and perform it in tensorflow.
 
 Pruning is a technique to reduce the number of parameters in a neural network. 
-
 Reducing the number of parameters in a network reduces the size of the network, because now the network has zeroes or non connections
-
 This is done by simply setting the value of a weight to 0.0. This produces weight matricies that contain 0's.
-
 This technique produces matricies called sparse matricies.
+
+Practically:
+This allows us to usually store the model in a compressed form before decompressing it for inference.
+To add value also requires the underlying hardware / framework to have efficient implementation of sparse matrix operations.
+
 
 What does this paper contributes to the state of the art of pruning?
 

@@ -1,8 +1,8 @@
 --- 
 layout: page
-title : Portfolio iOS Apps and Projects
+title : Portfolio iOS
 permalink: /portfolio/
-subtitle: "iOS Apps and Projects I have worked on" 
+subtitle: "iOS Apps I have worked on" 
 feature-img: "assets/img/pexels/computer.webp"
 tags: [Archive]
 ---

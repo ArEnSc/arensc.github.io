@@ -10,7 +10,7 @@ description: "A Blog where I try and sound smart, store notes, and rant about th
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Databites Labs - Posts # blog's title
+  title: Databites Labs # blog's title
   avatar: assets/img/avatar.svg
   favicon: assets/avatar.png
   gravatar: # Email MD5 hash

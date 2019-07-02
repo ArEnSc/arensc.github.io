@@ -8,11 +8,11 @@ excerpt_separator: <!--more-->
 ---
 
 Graphing with Matplotlib in OOP style.
-I often see many tutorials using the global state machine version of matplotlib while they are quick its often confusing and quickly becomes unwieldy.
+I often see many tutorials using the global state machine version of matplotlib while they are quick to use its often confusing and quickly becomes unwieldy when you want to reuse the code.
 
 <!--more-->
 
-I often see many tutorials using the global state machine version of matplotlib while they are quick its often confusing and quickly becomes unwieldy
+I often see many tutorials using the global state machine version of matplotlib while they are quick to use its often confusing and quickly becomes unwieldy when you want to reuse the code.
 
 The best way to work with Matplot Lib is to look at the tutorials, Matplotlib has a guide explaining what a figure comprises of here:
 [Direct link to tutorial](https://matplotlib.org/3.1.0/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py)

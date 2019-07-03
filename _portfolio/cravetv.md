@@ -19,7 +19,7 @@ Major features I contributed to include:
 	+ I introduced accessibility labels throughout the whole app for buttons and spec-ed out screens to allow a user with visual limitations to navigate the app more fluidly throughout the app. 
 
 2. The Downloads Feature
-	+ I gathered and implemented requirements necessary to introduce the ability to watch video's offline. This required me initially when the application was introduced, the application had no ability to watch video's offline. I gathered requirements and cross coordinated with different teams to integrate and build the UI/UX and business logic behind the feature to enable this feature to allow videos to be downloaded and watched while the device was not connected to the internet.
+	+ I gathered and implemented requirements necessary to introduce the ability to watch video's offline. The application had no ability to watch video's offline. I gathered requirements and cross coordinated with different teams to integrate and build the UI/UX and business logic behind the feature to enable this feature to allow videos to be downloaded and watched while the device was not connected to the internet.
 
 3. The Analytics Integration
 	+ Analytics helped the product team glean data to determine which features were successful and unsuccessful after every launch. My integration allowed the product team to measure the effectiveness of a UI/UX design and gave product insight into various features such as downloads and home screen. 

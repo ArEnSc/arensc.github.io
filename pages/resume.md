@@ -7,9 +7,9 @@ tags: [About, Resume]
 ---
 
 I often get asked two questions during the courting process for job searches. <br>
-Do you have a resume? can I get it in x format? <br>
-For recruiters it usually can I get it as a Doc. <br>
-For hiring manager technical leads it is can I get it as a PDF.<br>
+Do you have a resume? can I get it in Doc/PDF format? <br>
+For recruiters they want the resume in a Doc format. <br>
+For technical hiring managers they want it in a PDF format.<br>
 
 Here is my [resume in pdf format]({{ site.url }}/download/michael-chung-resume.pdf) <br>
 Here is my [resume in doc format]({{ site.url }}/download/michael-chung-resume.docx) <br>

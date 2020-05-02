@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: Numpy Top Functions used in Data Analysis
-tags: [VirtualEnv, Python, Notes]
+tags: [Numpy, Python, Notes]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->
@@ -13,7 +13,7 @@ Numpy Top Functions used in Data Analysis
 
 Top Functions
 
-```python3
+```python
 # To add a new cell, type '# %%'
 # To add a new markdown cell, type '# %% [markdown]'
 # %%

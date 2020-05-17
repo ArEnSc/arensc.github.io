@@ -160,5 +160,8 @@ Unmistakably we would do this with deprecation.
 
 Note: I didn't cover the specfics of having a public variable and how that would also add to the complexity.
 
+Note On Example
+Also If we were to change remove A and change the Hello(), in the examples they are functions that are used in the children and don't do anything so to change then isn't a huge issue, but the point is statically those changes must be made 
+
 
 

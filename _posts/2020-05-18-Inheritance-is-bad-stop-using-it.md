@@ -141,5 +141,5 @@ class D:C {
 If we take a look at the graph, we know that we have to change 4 functions 1 variable and have them behave in their original manner. If we were to want to remove A completely. The change distance on this design is quite high. This is due to the dependencies created by inheritance. When we design using inheritance we should take this into consideration. That is over time people can use.
 
 
-![Figure](assets/img/graph.jpg)
+![Figure](/assets/img/graph.jpg)
 

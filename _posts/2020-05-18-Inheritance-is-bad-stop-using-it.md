@@ -18,8 +18,9 @@ Is inheritance a bad design decision?
 Not so if you know how to design, and how to calculate change distance and complexity arising from the choice of using inheritance.
 
 TL;DR 
+This article is about reframing the way we think about our code by applying graphs to the code that allow you to see a latent structure, where in you can make design decisions. 
 
-The rule of thumb with inheritance, one or two levels of inheritance is often enough, if your parent class model shares a lot of common variables or functionality that you plan to extend or use in your child you should consider subclassing to keep the code DRY. Anymore than that you should consider the reprocussions.
+We know that the rule of thumb with inheritance, is one or two levels of inheritance is often enough, if your parent class model shares a lot of common variables or functionality that you plan to extend or use in your child you should consider subclassing to keep the code DRY. Anymore than that you should consider the reprocussions.
 
 So in this tutorial I am going to explain a way to measure inheritance complexity introduced in inheritance to measure the complexity of change. This will allow you to make an informed decision. This technique can be applied to all of software architecture.
 

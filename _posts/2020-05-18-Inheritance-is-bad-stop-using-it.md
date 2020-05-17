@@ -11,13 +11,17 @@ OOP and Inhertance the bane of all programming practices.
 
 <!--more-->
 
-OOP is a terrible paradigm, stop using inheritance it’s bad practice, is something that you will hear. Is inheritance a bad design decision?  
+OOP is a terrible paradigm, stop using inheritance it’s bad practice, is something that you will hear around on the internet and through some idealogues. Yes that was clickbait.
+
+Is inheritance a bad design decision?  
 
 Not so if you know how to design, and how to calculate change distance and complexity arising from the choice of using inheritance.
 
-The rule of thumb with inheritance, one level of inheritance is often enough, if your parent class model shares a lot of common variables or functionality that you plan to extend or use in your child you should consider subclassing to keep the code DRY.
+TL;DR 
 
-So in this tutorial I am going to explain a way to measure inheritance complexity introduced in inheritance to measure the complexity of change when you want to make an informed decision. This technique can be applied to all of software architecture.
+The rule of thumb with inheritance, one or two levels of inheritance is often enough, if your parent class model shares a lot of common variables or functionality that you plan to extend or use in your child you should consider subclassing to keep the code DRY. Anymore than that you should consider the reprocussions.
+
+So in this tutorial I am going to explain a way to measure inheritance complexity introduced in inheritance to measure the complexity of change. This will allow you to make an informed decision. This technique can be applied to all of software architecture.
 
 This technique uses graph theory to measure distances between objects using edges.
 
@@ -49,9 +53,10 @@ The distance from D to A is 3
 The distance from C to A is 2
 The distance from B to A is 1
 
-More over many other combinations when we speak from the perspective of other objects, but here let's just look at A. 
+More over many other combinations when we speak from the perspective of other objects, but here we just take a look at A. 
 
-Previously we discussed depth distance from A to D, how about the breath? 
+Previously we discussed depth distance from A to D, how about the breath ?
+or how about we just subclass from A?  
 
 ```swift
 
@@ -71,8 +76,7 @@ class D:A {
 
 ```
 
-
-Where the distance between A and CBD are one, but the width or breadth of A is 3
+Here the distance between A and CBD is 1, but the width or breadth of A is 3 does that have an impact in change? if so whos perspective ? now lets cut into this a bit deeper. (Excercise left to the reader after completing the article)
 
 Since we are putting the graphical abstraction over OOP code we have a way to measure the change distance if we were to change functions or variables in A’s design. 
 
@@ -97,7 +101,6 @@ class D:C {
 }
 
 ```
-
 
 Let's go back to the first example and 
 add a variable to class A and a function func Hello() -> String that returns a string
@@ -138,8 +141,23 @@ class D:C {
 }
 ```
 
-If we take a look at the graph, we know that we have to change 4 functions 1 variable and have them behave in their original manner. If we were to want to remove A completely. The change distance on this design is quite high. This is due to the dependencies created by inheritance. When we design using inheritance we should take this into consideration. That is over time people can use.
+If we take a look at the graph, we know that we have to change 4 functions 1 variable and have them behave in their original manner. 
 
+If we were to want to remove A completely. 
+The change distance on this artifical design is quite high. 
+This is due to the potiential dependencies created by inheritance. 
+
+When we design using inheritance we should take this into consideration. 
+
+When we design we should consider that there is an extra dimension time and how other people would interact with your design.
+
+That is over time people can extend upon your work making it unlikely you can easily change the base implementation without a lot of maintence.
 
 ![Figure](/assets/img/graph.jpg)
+
+Unmistakably we would do this with deprecation.
+
+Note: I didn't cover the specfics of having a public variable and how that would also add to the complexity.
+
+
 

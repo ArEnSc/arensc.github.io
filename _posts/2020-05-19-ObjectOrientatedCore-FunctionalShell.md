@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: Code Bite - Object Orientated Shell Functional Core Pure Functions and Impure Functions.
+title: Code Bites - Object Orientated Shell Functional Core Pure Functions and Impure Functions.
 tags: [Swift,OOP,Functional Programming]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
@@ -37,7 +37,7 @@ Story Time:
 
 In this code bite, we are going to discuss how to manage Object state and how to manage it, through immutability, and by using pure functions through two specific types of functions, member functions, free functions to reduce cognitive load.
 
-What is a pure function ? In an object oriented programming context, it is a function that does not modify self, and or its inputs are immutable. In general, it’s a function that does not create run time side effects through write operations. The function also must produce a value from the function via return in the sync case that is it must. In the async case the mechanism to return a value, can be via either a call back, a then able promise like mechanism, a parallel in touch bistros case, or a flat mappable observable in the rx case.
+What is a pure function? In an object oriented programming context, it is a function that does not modify self, and or its inputs are immutable. In general, it’s a function that does not create run time side effects through write operations. The function also must produce a value from the function via return in the sync case that is it must. In the async case the mechanism to return a value, can be via either a call back, a then able promise like mechanism, a parallel in touch bistros case, or a flat mappable observable in the rx case.
 
 Why should we have pure functions in our code base? 
 Pure functions are functions that are deterministic meaning they are easy to test, they make guarantees that they do not change the state at the scope they are used in, they guarantee that there is no read write relationship, between the function scope and the rest of the object or even the object variables entering the function. 
@@ -105,15 +105,13 @@ class B: UIViewController {
 
 ```
 
-Why is it that a pure function can reduce complexity of the code? mathematically, when you represent the code as a graph of relationships of read and writes, the pure function only produces values, and never writes to the system. 
-If it does that then we can guarantee that, it wouldn’t modify the state of the system. Its as simple as that. 
+Why is it that a pure function can reduce complexity of the code? In graph theory when you represent the code as a graph of relationships of where read and write are edges to variables that contain state, the pure function only writes / reads values internal to its scope. Produces values, and never writes those values to the system. 
+
+If it does that then we can guarantee that, it wouldn’t modify the state of the system. It's as simple as that. 
 
 What about structs and functions on structs? Well that's an exercise left to you, is this an appropriate solution for some cases ? 
 
 Impure Functions
-Any function that does not return a value, or writes to the 3 state types above is an impure function. They always exist in the the system. Most iOS applications require that you manipulate a collection of objects, a list of objects. That function that you write to perform that operation is impure, assuming you have a list in an object, it will have to modify self to write or change that list. I.e self.list.deleteAt(i)
-
-
-
+Any function that does not return a value, or writes to the 3 state types above is an impure function. They always exist in the system all iOS applications require that you manipulate a collection of objects, e.g a list of objects. That function that you write to perform that operation is impure, assuming you have a list in an object, it will have to modify self to write or change that list. I.e self.list.deleteAt(i)
 
 

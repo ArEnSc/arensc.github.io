@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    /* Material Design Elevation */
+    .elevation-1 { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .elevation-2 { box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+    .elevation-3 { box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+
+  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,12 +22,15 @@
     }
 
     :root {
-      --md-primary-fg-color: #1976d2;
+      --md-primary-fg-color: #7c3aed;
       --md-primary-bg-color: #fff;
-      --md-text-color: #333;
-      --md-text-light-color: #666;
-      --md-border-color: #e0e0e0;
-      --md-code-bg-color: #f5f5f5;
+      --md-accent-fg-color: #6d28d9;
+      --md-text-color: #1f2937;
+      --md-text-light-color: #6b7280;
+      --md-border-color: #e5e7eb;
+      --md-code-bg-color: #f3f4f6;
+      --md-sidebar-bg-color: #faf5ff;
+      --md-hover-color: #ede9fe;
       --sidebar-width: 260px;
     }
 
@@ -39,10 +48,11 @@
       left: 0;
       width: var(--sidebar-width);
       height: 100vh;
-      background: #f5f5f5;
+      background: var(--md-sidebar-bg-color);
       overflow-y: auto;
       border-right: 1px solid var(--md-border-color);
       padding: 2rem 0;
+      box-shadow: 2px 0 4px rgba(0,0,0,0.05);
     }
 
     .sidebar-header {
@@ -76,14 +86,16 @@
     }
 
     .nav-item:hover {
-      background: #e8e8e8;
+      background: var(--md-hover-color);
       color: var(--md-primary-fg-color);
     }
 
     .nav-item.active {
-      background: #e3f2fd;
+      background: var(--md-hover-color);
       color: var(--md-primary-fg-color);
       font-weight: 500;
+      border-left: 3px solid var(--md-primary-fg-color);
+      padding-left: calc(1.5rem - 3px);
     }
 
     .nav-divider {
@@ -105,6 +117,31 @@
       margin-bottom: 3rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--md-border-color);
+    }
+
+    /* Material Design Button */
+    .md-button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.875rem;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .md-button-primary {
+      background: var(--md-primary-fg-color);
+      color: white;
+      box-shadow: 0 2px 4px rgba(124, 58, 237, 0.2);
+    }
+
+    .md-button-primary:hover {
+      background: var(--md-accent-fg-color);
+      box-shadow: 0 4px 8px rgba(124, 58, 237, 0.3);
+      transform: translateY(-1px);
     }
 
     .hero-title {
@@ -168,12 +205,13 @@
     .tag {
       display: inline-block;
       padding: 0.25rem 0.75rem;
-      background: #e3f2fd;
-      color: var(--md-primary-fg-color);
+      background: var(--md-hover-color);
+      color: var(--md-accent-fg-color);
       font-size: 0.8rem;
-      border-radius: 3px;
+      border-radius: 16px;
       margin-right: 0.5rem;
       text-decoration: none;
+      font-weight: 500;
     }
 
     /* Cards Section */
@@ -197,13 +235,16 @@
     .card {
       padding: 1.5rem;
       border: 1px solid var(--md-border-color);
-      border-radius: 4px;
-      transition: box-shadow 0.2s;
+      border-radius: 8px;
+      transition: all 0.3s;
       cursor: pointer;
+      background: #fff;
     }
 
     .card:hover {
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+      transform: translateY(-2px);
+      border-color: var(--md-primary-fg-color);
     }
 
     .card-icon {
@@ -284,9 +325,10 @@
         background: var(--md-primary-fg-color);
         color: white;
         border: none;
-        padding: 0.5rem;
-        border-radius: 4px;
+        padding: 0.75rem;
+        border-radius: 8px;
         cursor: pointer;
+        box-shadow: 0 2px 4px rgba(124, 58, 237, 0.2);
       }
     }
 
@@ -301,16 +343,19 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
-      <a href="/" class="site-name">{{ site.title }}</a>
+      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="{{ '/assets/img/avatar.svg' | relative_url }}" alt="{{ site.title }}" style="width: 40px; height: 40px;">
+        <span>{{ site.title }}</span>
+      </a>
     </div>
     
     <nav class="sidebar-nav">
       <div class="nav-section">
-        <a href="/" class="nav-item {% if page.url == '/' %}active{% endif %}">Home</a>
-        <a href="/blog" class="nav-item {% if page.url == '/blog/' %}active{% endif %}">Writing</a>
-        <a href="/about" class="nav-item {% if page.url == '/about/' %}active{% endif %}">About</a>
-        <a href="/portfolio" class="nav-item {% if page.url == '/portfolio/' %}active{% endif %}">Portfolio</a>
-        <a href="/resume" class="nav-item {% if page.url == '/resume/' %}active{% endif %}">Resume</a>
+        <a href="/" class="nav-item {% if page.url == '/' %}active{% endif %}">🏠 Home</a>
+        <a href="/blog" class="nav-item {% if page.url == '/blog/' %}active{% endif %}">✍️ Writing</a>
+        <a href="/about" class="nav-item {% if page.url == '/about/' %}active{% endif %}">👨‍💻 About</a>
+        <a href="/portfolio" class="nav-item {% if page.url == '/portfolio/' %}active{% endif %}">💼 Portfolio</a>
+        <a href="/resume" class="nav-item {% if page.url == '/resume/' %}active{% endif %}">📄 Resume</a>
       </div>
 
       <div class="nav-divider"></div>

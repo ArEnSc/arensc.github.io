@@ -1,0 +1,33 @@
+---
+layout: jxnl-blog
+title: Blog
+permalink: /blog/
+---
+
+<section class="hero-section">
+  <h1 class="hero-title">Blog</h1>
+  <div class="hero-subtitle">
+    <p>Thoughts on iOS development, AI, and software engineering.</p>
+  </div>
+</section>
+
+<section class="post-list">
+  {% for post in site.posts %}
+    <article class="post-item">
+      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+      <h3 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <div class="post-excerpt">
+        {{ post.excerpt | strip_html | truncatewords: 50 }}
+      </div>
+      {% if post.tags.size > 0 %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</section>

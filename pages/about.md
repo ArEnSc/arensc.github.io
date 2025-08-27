@@ -78,4 +78,6 @@ I'm currently accepting new consulting engagements for:
 
 ---
 
-*Note: The Databites branding and logo for this site were designed by [Simon](https://dribbble.com/simc). If you need design work, let him know I sent you!*
+<div style="padding-top: 48px;">
+  <em>Note: The Databites branding and logo for this site were designed by <a href="https://dribbble.com/simc">Simon</a>. If you need design work, let him know I sent you!</em>
+</div>

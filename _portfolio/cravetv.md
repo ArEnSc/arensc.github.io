@@ -1,19 +1,32 @@
 ---
-layout: post
+layout: default
 title: CraveTV 2
-feature-img: "assets/img/portfolio/crave/title.png"
 img: "assets/img/portfolio/crave/app_icon.png"
 gallery: "assets/img/portfolio/crave/app/"
 date: March 2018 - March 2019
 ---
 
-![image]({{ page.img | relative_url }})
+# {{ page.title }}
 
-At Bell Media, I worked on the popular CraveTV 2 mobile application. This app required extensive cross communication and work across the organization, prior CraveTV via a hybrid solution.
+<div style="display: flex; align-items: flex-start; gap: 32px; margin-bottom: 32px; flex-wrap: wrap;">
+  <img src="{{ page.img | relative_url }}" alt="{{ page.title }} icon" style="width: 120px; height: 120px; object-fit: contain; border-radius: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <div style="flex: 1; min-width: 300px;">
+    <div style="font-size: 18px; color: rgba(0,0,0,0.6); margin-bottom: 8px;">{{ page.date }}</div>
+    <p style="font-size: 18px; line-height: 28px; margin: 0;">At Bell Media, I worked on the popular CraveTV 2 mobile application. This app required extensive cross communication and work across the organization.</p>
+    <div style="margin-top: 16px; display: flex; gap: 24px;">
+      <div>
+        <div style="font-size: 24px; font-weight: 500; color: var(--md-primary);">400K</div>
+        <div style="font-size: 14px; color: rgba(0,0,0,0.6);">Daily Active Users</div>
+      </div>
+      <div>
+        <div style="font-size: 24px; font-weight: 500; color: var(--md-primary);">3M+</div>
+        <div style="font-size: 14px; color: rgba(0,0,0,0.6);">Downloads</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-The application had 400K Daily Active Users and over 3 Million Downloads
-
-Major features I contributed to include:
+## Major Contributions
 
 1. Accessibility Feature
 	+ I introduced accessibility labels throughout the whole app for buttons and spec-ed out screens to allow a user with visual limitations to navigate the app more fluidly throughout the app. 
@@ -27,6 +40,34 @@ Major features I contributed to include:
 4. The iPad, tvOS Sections 
 	+ The application required many of the screens to be functionally available for the iPad and tvOS, this required reworking of the UI, which was work done by the team and myself.
 
-{% include gallery.html gallery_path=page.gallery %}
+## App Screenshots
+
+<style>
+  .app-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  
+  .app-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .app-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+</style>
+
+<div class="app-gallery">
+  {% assign image_files = site.static_files | where: "path", page.gallery %}
+  {% for image in image_files limit:6 %}
+    <img src="{{ image.path | relative_url }}" alt="CraveTV screenshot">
+  {% endfor %}
+</div>
 
 

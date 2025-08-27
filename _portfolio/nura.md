@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Nura
 feature-img: "assets/img/portfolio/nura/title_hor.png"
 img: "assets/img/portfolio/nura/app_icon.png"

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Foldly
 feature-img: "assets/img/portfolio/foldly/title.png"
 img: "assets/img/portfolio/foldly/app_icon.png"

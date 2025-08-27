@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Participation 
 feature-img: "assets/img/portfolio/paction/title.png"
 img: "assets/img/portfolio/paction/app_icon.png"

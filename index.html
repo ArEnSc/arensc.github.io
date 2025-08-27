@@ -1,3 +1,65 @@
 ---
-layout: home-minimal
+layout: jxnl-inspired
 ---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to DataBites Labs</h1>
+    <p class="hero-subtitle">iOS Apps, Generative AI, and Deep Learning</p>
+    <div class="hero-buttons">
+      <a href="/blog" class="btn btn-primary">Read Blog</a>
+      <a href="/about" class="btn btn-secondary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts Section -->
+<section class="posts-section">
+  <div class="container">
+    <h2 class="section-title">Latest Posts</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+        <article class="post-card">
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <div class="post-meta">
+            {{ post.date | date: "%B %-d, %Y" }}
+            {% if post.tags.size > 0 %} • {{ post.tags | join: ", " }}{% endif %}
+          </div>
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/blog" class="btn btn-secondary">View All Posts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">What I Do</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3 class="feature-title">iOS Development</h3>
+        <p>Building beautiful, performant iOS applications with Swift and SwiftUI</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3 class="feature-title">Generative AI</h3>
+        <p>Exploring cutting-edge AI models and their practical applications</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3 class="feature-title">Deep Learning</h3>
+        <p>Implementing neural networks and ML solutions for real-world problems</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -128,6 +128,62 @@ permalink: /portfolio/
   <p style="font-size: 18px; color: rgba(0,0,0,0.7); max-width: 600px; margin: 0 auto 24px;">
     I've had the privilege of working with amazing companies and startups, from media giants to innovative tech companies.
   </p>
+  
+  <style>
+    .client-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+      align-items: center;
+      justify-items: center;
+    }
+    
+    .client-logo {
+      width: 120px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all 0.3s;
+    }
+    
+    .client-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    
+    .client-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  </style>
+  
+  <div class="client-logos">
+    <div class="client-logo">
+      <img src="/assets/img/portfolio/clients/bellmedia.jpg" alt="Bell Media">
+    </div>
+    <div class="client-logo">
+      <img src="/assets/img/portfolio/clients/td.png" alt="TD">
+    </div>
+    <div class="client-logo">
+      <img src="/assets/img/portfolio/clients/thrive.png" alt="Thrive">
+    </div>
+    <div class="client-logo">
+      <img src="/assets/img/portfolio/clients/kiwi.png" alt="Kiwi">
+    </div>
+    <div class="client-logo">
+      <img src="/assets/img/portfolio/clients/papaceo.png" alt="Papa Ceo">
+    </div>
+    <div class="client-logo">
+      <img src="/assets/img/portfolio/clients/chezdine.png" alt="Chez Dine">
+    </div>
+  </div>
+  
   <p style="color: rgba(0,0,0,0.6); margin-bottom: 24px;">
     For client confidentiality reasons, detailed case studies are available upon request.
   </p>

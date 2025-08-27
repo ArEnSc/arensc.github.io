@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Gallery
 subtitle: Chloe
 permalink: /gallery/

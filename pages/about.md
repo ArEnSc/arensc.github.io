@@ -76,8 +76,10 @@ I'm currently accepting new consulting engagements for:
   <a href="https://www.linkedin.com/in/michael-c-31662a38/" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary); margin: 0;" target="_blank">CONNECT ON LINKEDIN</a>
 </div>
 
----
+<div style="margin: 48px 0;">
+  <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 0;">
+</div>
 
-<div style="padding-top: 48px;">
+<div style="padding-top: 24px;">
   <em>Note: The Databites branding and logo for this site were designed by <a href="https://dribbble.com/simc">Simon</a>. If you need design work, let him know I sent you!</em>
 </div>

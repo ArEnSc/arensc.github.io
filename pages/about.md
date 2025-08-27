@@ -33,8 +33,8 @@ As a Full-Stack Software Consultant, I help businesses:
 
 Beyond traditional software development, I bring a unique perspective shaped by entrepreneurial ventures:
 
-### DataBites Academy
-Founded and led DataBites, a data science education startup where I:
+### Databites Academy
+Founded and led Databites, a data science education startup where I:
 - Developed comprehensive curriculum for aspiring data scientists
 - Taught complex technical concepts to diverse audiences
 - Built the technical infrastructure for online learning
@@ -78,4 +78,4 @@ I'm currently accepting new consulting engagements for:
 
 ---
 
-*Note: The DataBites branding and logo for this site were designed by [Simon](https://dribbble.com/simc). If you need design work, let him know I sent you!*
+*Note: The Databites branding and logo for this site were designed by [Simon](https://dribbble.com/simc). If you need design work, let him know I sent you!*

@@ -42,6 +42,7 @@
       height: 64px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 0 16px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: fixed;
@@ -54,7 +55,6 @@
     .app-bar-title {
       font-size: 20px;
       font-weight: 500;
-      margin-left: 16px;
     }
 
     /* Navigation Drawer */
@@ -257,8 +257,10 @@
     <button class="menu-toggle" onclick="document.querySelector('.drawer').classList.toggle('open')">
       <span class="material-icons">menu</span>
     </button>
-    <img src="{{ '/assets/img/avatar.svg' | relative_url }}" alt="{{ site.title }}" style="width: 40px; height: 40px;">
-    <h1 class="app-bar-title">{{ site.title }}</h1>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="{{ '/assets/img/avatar.svg' | relative_url }}" alt="{{ site.title }}" style="width: 40px; height: 40px;">
+      <h1 class="app-bar-title" style="margin: 0;">{{ site.title }}</h1>
+    </div>
   </header>
 
   <!-- Navigation Drawer -->

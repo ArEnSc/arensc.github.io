@@ -1,62 +1,72 @@
 ---
-layout: jxnl-blog
+layout: default
 ---
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <h1 class="hero-title">Michael Chung</h1>
-  <div class="hero-subtitle">
-    <p>Senior Software Engineer specializing in iOS development, Generative AI, and Deep Learning. Building innovative mobile applications and exploring the frontiers of artificial intelligence.</p>
-    <p>Currently working as a Full Stack Consultant, helping companies leverage modern technology to solve complex problems.</p>
-  </div>
-</section>
+<h1>Welcome to DataBites Labs</h1>
+<p style="font-size: 20px; line-height: 28px; color: rgba(0,0,0,0.6);">iOS Apps, Generative AI, and Deep Learning</p>
 
-<!-- Resources Section -->
-<section class="cards-section">
-  <h2 class="section-title">📚 Free Resources</h2>
-  <div class="cards-grid">
-    <div class="card" onclick="window.location.href='/portfolio'">
-      <div class="card-icon">💼</div>
-      <h3 class="card-title">Portfolio</h3>
-      <p class="card-description">Check out my latest projects and open source contributions</p>
-    </div>
-    <div class="card" onclick="window.location.href='https://github.com/{{ site.theme_settings.github }}'">
-      <div class="card-icon">🚀</div>
-      <h3 class="card-title">Open Source</h3>
-      <p class="card-description">Explore my GitHub repositories and contributions</p>
-    </div>
-    <div class="card" onclick="window.location.href='/blog'">
-      <div class="card-icon">✍️</div>
-      <h3 class="card-title">Blog Posts</h3>
-      <p class="card-description">Technical articles on iOS, AI, and software engineering</p>
-    </div>
-    <div class="card" onclick="window.location.href='/about#contact'">
-      <div class="card-icon">📬</div>
-      <h3 class="card-title">Get in Touch</h3>
-      <p class="card-description">Let's discuss your next project or collaboration</p>
-    </div>
-  </div>
-</section>
+<div style="margin: 32px 0;">
+  <a href="/blog" class="btn btn-primary" style="margin-right: 16px;">READ BLOG</a>
+  <a href="/about" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);">LEARN MORE</a>
+</div>
 
-<!-- Latest Posts -->
-<section class="post-list">
-  <h2 class="section-title">✨ Latest Posts</h2>
-  {% for post in site.posts limit:5 %}
-    <article class="post-item">
-      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-      <h3 class="post-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h3>
-      <div class="post-excerpt">
-        {{ post.excerpt | strip_html | truncatewords: 40 }}
+<h2>Featured Resources</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 24px 0;">
+  <div class="card" onclick="window.location.href='/portfolio'" style="cursor: pointer;">
+    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+      <span class="material-icons" style="color: var(--md-primary); margin-right: 16px;">work</span>
+      <h3 style="margin: 0;">Portfolio</h3>
+    </div>
+    <p style="margin: 0;">Check out my latest projects and open source contributions</p>
+  </div>
+  
+  <div class="card" onclick="window.location.href='https://github.com/{{ site.theme_settings.github }}'" style="cursor: pointer;">
+    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+      <span class="material-icons" style="color: var(--md-primary); margin-right: 16px;">code</span>
+      <h3 style="margin: 0;">Open Source</h3>
+    </div>
+    <p style="margin: 0;">Explore my GitHub repositories and contributions</p>
+  </div>
+  
+  <div class="card" onclick="window.location.href='/blog'" style="cursor: pointer;">
+    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+      <span class="material-icons" style="color: var(--md-primary); margin-right: 16px;">article</span>
+      <h3 style="margin: 0;">Blog Posts</h3>
+    </div>
+    <p style="margin: 0;">Technical articles on iOS, AI, and software engineering</p>
+  </div>
+  
+  <div class="card" onclick="window.location.href='/about'" style="cursor: pointer;">
+    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+      <span class="material-icons" style="color: var(--md-primary); margin-right: 16px;">email</span>
+      <h3 style="margin: 0;">Get in Touch</h3>
+    </div>
+    <p style="margin: 0;">Let's discuss your next project or collaboration</p>
+  </div>
+</div>
+
+<h2>Latest Posts</h2>
+{% for post in site.posts limit:5 %}
+  <div class="card" style="margin-bottom: 16px;">
+    <div style="font-size: 14px; color: rgba(0,0,0,0.54); margin-bottom: 8px;">
+      {{ post.date | date: "%B %-d, %Y" }}
+    </div>
+    <h3 style="margin: 0 0 8px 0;">
+      <a href="{{ post.url | relative_url }}" style="color: inherit;">{{ post.title }}</a>
+    </h3>
+    <p style="margin: 0; color: rgba(0,0,0,0.7);">
+      {{ post.excerpt | strip_html | truncatewords: 40 }}
+    </p>
+    {% if post.tags.size > 0 %}
+      <div style="margin-top: 12px;">
+        {% for tag in post.tags %}
+          <span style="display: inline-block; padding: 4px 12px; background: var(--md-primary-light); color: var(--md-primary-dark); font-size: 12px; border-radius: 12px; margin-right: 8px;">{{ tag }}</span>
+        {% endfor %}
       </div>
-      {% if post.tags.size > 0 %}
-        <div class="post-tags">
-          {% for tag in post.tags %}
-            <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-    </article>
-  {% endfor %}
-</section>
+    {% endif %}
+  </div>
+{% endfor %}
+
+<div style="text-align: center; margin-top: 32px;">
+  <a href="/blog" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);">VIEW ALL POSTS</a>
+</div>

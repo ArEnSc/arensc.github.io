@@ -1,11 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
-  <body>
-    {% include navbar.html %}
-    <div class="content">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  
+  <!-- Material Design Icons & Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <style>
+    :root {
+      --md-primary: #7c3aed;
+      --md-primary-dark: #6d28d9;
+      --md-primary-light: #a78bfa;
+      --md-accent: #2196f3;
+      --md-background: #fafafa;
+      --md-surface: #ffffff;
+      --md-on-primary: #ffffff;
+      --md-on-surface: #000000;
+      --md-on-background: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--md-background);
+      color: var(--md-on-background);
+      line-height: 1.5;
+    }
+
+    /* App Bar */
+    .app-bar {
+      background-color: var(--md-primary);
+      color: var(--md-on-primary);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .app-bar-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-left: 16px;
+    }
+
+    /* Navigation Drawer */
+    .drawer {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      width: 256px;
+      height: calc(100vh - 64px);
+      background-color: var(--md-surface);
+      box-shadow: 2px 0 4px rgba(0,0,0,0.05);
+      overflow-y: auto;
+      transition: transform 0.3s;
+    }
+
+    .drawer-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      color: rgba(0,0,0,0.87);
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .drawer-item:hover {
+      background-color: rgba(124, 58, 237, 0.08);
+    }
+
+    .drawer-item.active {
+      background-color: rgba(124, 58, 237, 0.12);
+      color: var(--md-primary);
+    }
+
+    .drawer-item .material-icons {
+      margin-right: 32px;
+      color: rgba(0,0,0,0.54);
+    }
+
+    .drawer-item.active .material-icons {
+      color: var(--md-primary);
+    }
+
+    /* Content */
+    .content {
+      margin-left: 256px;
+      margin-top: 64px;
+      padding: 24px;
+      min-height: calc(100vh - 64px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 40px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 16px;
+      margin-top: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 32px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 16px;
+      color: rgba(0,0,0,0.87);
+    }
+
+    /* Cards */
+    .card {
+      background-color: var(--md-surface);
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 16px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background-color: var(--md-primary);
+      color: var(--md-on-primary);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--md-primary-dark);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Mobile */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--md-on-primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .drawer {
+        transform: translateX(-100%);
+      }
+
+      .drawer.open {
+        transform: translateX(0);
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .app-bar-title {
+        margin-left: 8px;
+      }
+    }
+
+    /* Code */
+    code {
+      font-family: 'Roboto Mono', monospace;
+      background-color: rgba(0,0,0,0.05);
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
+
+    pre {
+      background-color: #f5f5f5;
+      padding: 16px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    /* Links */
+    a {
+      color: var(--md-primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin-bottom: 16px;
+      margin-left: 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- App Bar -->
+  <header class="app-bar">
+    <button class="menu-toggle" onclick="document.querySelector('.drawer').classList.toggle('open')">
+      <span class="material-icons">menu</span>
+    </button>
+    <img src="{{ '/assets/img/avatar.svg' | relative_url }}" alt="{{ site.title }}" style="width: 40px; height: 40px;">
+    <h1 class="app-bar-title">{{ site.title }}</h1>
+  </header>
+
+  <!-- Navigation Drawer -->
+  <nav class="drawer">
+    <a href="/" class="drawer-item {% if page.url == '/' %}active{% endif %}">
+      <span class="material-icons">home</span>
+      Home
+    </a>
+    <a href="/blog" class="drawer-item {% if page.url == '/blog/' %}active{% endif %}">
+      <span class="material-icons">article</span>
+      Blog
+    </a>
+    <a href="/about" class="drawer-item {% if page.url == '/about/' %}active{% endif %}">
+      <span class="material-icons">person</span>
+      About
+    </a>
+    <a href="/portfolio" class="drawer-item {% if page.url == '/portfolio/' %}active{% endif %}">
+      <span class="material-icons">work</span>
+      Portfolio
+    </a>
+    <a href="/resume" class="drawer-item {% if page.url == '/resume/' %}active{% endif %}">
+      <span class="material-icons">description</span>
+      Resume
+    </a>
+    <div style="border-top: 1px solid rgba(0,0,0,0.12); margin: 8px 0;"></div>
+    <a href="https://github.com/{{ site.theme_settings.github }}" class="drawer-item" target="_blank">
+      <span class="material-icons">code</span>
+      GitHub
+    </a>
+    <a href="{{ site.theme_settings.linkedin }}" class="drawer-item" target="_blank">
+      <span class="material-icons">business</span>
+      LinkedIn
+    </a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+    <div class="container">
       {{ content }}
     </div>
-    {% include footer.html %}
-  </body>
+  </main>
+</body>
 </html>

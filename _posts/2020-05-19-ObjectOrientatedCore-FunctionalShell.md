@@ -1,117 +1,158 @@
 ---
 layout: post 
-title: Code Bites - Object-Oriented Shell Functional Core Pure Functions and Impure Functions.
+title: Object-Oriented Shell, Functional Core - Managing State in Modern Applications
 tags: [Swift, OOP, Functional Programming]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->
 ---
 
-Object-Oriented Shell Functional Core Part 1
-Revenge of the pure functions.
+Combining the best of object-oriented and functional programming paradigms to build maintainable SCRUD applications.
 
 <!--more-->
-Object-Oriented Shell Functional Core is a set of techniques that combine my experiences programming in Haskell and programming in OOP languages that give us the best of both worlds in developing SCRUD Apps.
 
-We will discuss Pure and Impure Functions
+## Introduction
 
-Some definitions first before we begin.
+Object-Oriented Shell, Functional Core (OSFC) represents a powerful architectural pattern that emerged from my experience with both Haskell's pure functional approach and the pragmatic realities of OOP languages. This technique offers a compelling solution for managing complexity in modern SCRUD (Search, Create, Read, Update, Delete) applications.
 
-There are 3 types of States in an Application.
- 
-Global state, a variable that the whole application can read and write
+The core principle is elegantly simple: encapsulate side effects within an object-oriented shell while keeping business logic pure and functional at its core. This separation yields code that's both testable and maintainable.
 
-Object state, member variables, that the members of the object can read and write, or even the callers can access depending on scope accessibility. I.e., public/private
+## Understanding State in Applications
 
-Persisted state, state that you have persisted in an embedded database or database. e.g.,
-CoreData
+Before diving into pure and impure functions, let's establish a clear taxonomy of state in applications:
 
-There are two types of side effects: 
+### 1. Global State
+Variables accessible throughout the entire application for both reading and writing. While powerful, global state introduces coupling and makes reasoning about code flow challenging.
 
-Static side effects: When you remove an object member in say a singleton and you compile it and your editor shows you what it broke.
+### 2. Object State
+Member variables confined within object boundaries. Access control (public/private) determines visibility, providing encapsulation while maintaining flexibility.
 
-Runtime side effects:
-These are a bit more complex, as they require a graphical example to explain. A runtime side effect occurs when a variable is changed by some function while in a running state. When we later read the variable, it was unintentionally changed, resulting in a bug. 
+### 3. Persisted State
+Data stored in databases or file systems (e.g., CoreData, SQLite). This state survives application restarts and requires careful synchronization with in-memory representations.
 
-Story Time:
+## The Two Faces of Side Effects
 
-In this code bite, we are going to discuss how to manage object state through immutability and by using pure functions through two specific types of functions: member functions and free functions to reduce cognitive load.
+Understanding side effects is crucial for applying OSFC effectively:
 
-What is a pure function? In an object-oriented programming context, it is a function that does not modify self, and/or its inputs are immutable. In general, it's a function that does not create runtime side effects through write operations. The function also must produce a value from the function via return in the sync case. In the async case, the mechanism to return a value can be via either a callback, a thenable promise-like mechanism, a parallel in TouchBistro's case, or a flatMappable observable in the Rx case.
+### Static Side Effects
+These manifest at compile time. Remove a singleton's method, and your IDE immediately highlights every broken reference. While disruptive, static side effects are predictable and manageable.
 
-Why should we have pure functions in our codebase? 
-Pure functions are functions that are deterministic, meaning they are easy to test. They make guarantees that they do not change the state at the scope they are used in. They guarantee that there is no read-write relationship between the function scope and the rest of the object or even the object variables entering the function. 
+### Runtime Side Effects
+Far more insidious, runtime side effects emerge during execution. A function modifies a shared variable, another function reads it later expecting the original value—suddenly, you're debugging seemingly impossible behavior. These effects compound exponentially as systems grow.
 
-This gives you peace of mind that if we were to remove that function, there wouldn't be a side effect of doing so, other than breaking the chain of functions. If you use the function, there isn't an impact or side effect of doing so.
+## Pure Functions: The Functional Core
 
-Thus reducing the cognitive load of maintenance and reading of the code. That is, you do not need to trace the rest of the code to determine what this function can do to the system.
+### Definition
+In object-oriented contexts, a pure function exhibits three key characteristics:
+1. **No self modification** - It doesn't alter the object's state
+2. **Immutable inputs** - Parameters remain unchanged
+3. **Deterministic output** - Always returns a value (synchronously or asynchronously)
 
-Can every function be pure then? No, not all functions are pure, especially in SCRUD application programming. The idea in SCRUD applications that are largely based on OOP paradigms is that we manage the state through chaining functions async or sync, through implementation patterns, through an object-oriented interface.  
+For asynchronous operations, the return mechanism might involve callbacks, promises, observables (Rx), or other async patterns—but the principle remains: predictable input-output relationships.
 
-All in all, at the end of the chain we have to present the computation, which is storing state in one of the 3 ways above. Meaning that if there are pure functions, there are impure functions alongside them. 
+### Why Pure Functions Matter
 
-E.g., we have a member variable representing a list of tasks. If we remove a task from the task list by deleting that task using a function, the function is considered impure.
+Pure functions offer compelling benefits:
 
-We will discuss implementation patterns through object-oriented interfaces and chaining in another code bite.
+- **Testability**: Deterministic behavior makes unit testing straightforward
+- **Composability**: Chain pure functions without fear of hidden interactions
+- **Reasoning**: Understand functions in isolation without tracing global effects
+- **Refactoring**: Remove or relocate pure functions safely
 
-// Pure Free Function: A free function cannot reference self, therefore cannot modify the state of the object, but can it modify its input and cause a runtime side effect? 
+This dramatically reduces cognitive load. When reading pure functions, you need only understand their inputs and outputs—not the entire system state.
+
+## The Reality of Impure Functions
+
+Despite their benefits, pure functions alone cannot build complete applications. SCRUD operations inherently require state mutation—updating databases, modifying UI, handling user input. This is where the object-oriented shell comes in.
+
+Consider this practical example:
 
 ```swift
-let a = AReferenceType()
- 
-var b = ValueType()
- 
-func AFreePureFunction(a:AReferenceType, b:ValueType) {
-    a.int = 1
-    print("Change and cause Side Effect \(a.int)")
- 
-    var b = b
-    b.int = 1
+class TaskManager {
+    private var tasks: [Task] = []
+    
+    // Impure: Modifies object state
+    func deleteTask(at index: Int) {
+        tasks.remove(at: index)
+        persistTasks() // Side effect: Database write
+    }
+    
+    // Pure: Returns new array without modifying state
+    func tasksFiltered(by status: TaskStatus) -> [Task] {
+        return tasks.filter { $0.status == status }
+    }
 }
- 
-AFreePureFunction(a: a, b: b)
-print("Side Effect A => int: \(a.int)")
-print("Side Effect B => int: \(b.int)")
- 
-// notice how a was changed in the outer scope but b wasn't
-// this has to do with the fact that structs are immutable in that scope.1
 ```
 
-Yes, reference types can have side effects even if you use a free function. 
-What if the reference type contains a value you need for a computation? Make sure that the input is immutable in this case or pass a copy of the input to the function. Look up types that are immutable in Swift for more details, as this is out of scope of the tutorial.
+## Practical Implementation in Swift
 
-How about class member functions? 
+Let's examine how Swift's type system helps enforce these patterns:
 
-// Class Member Pure Function
+### Free Functions and Side Effects
+
 ```swift
-
-class B: UIViewController {
-    var aValue:Int = 0
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        let newValue = memberPureFunctionThatAddsOne(a:self.aValue)
-        print(newValue) // use to update the UI ? use to update a
-    }
- 
-    // Do not reference self here
-    func memberPureFunctionThatAddsOne(a:Int) -> String {
-        let a = a + 1
-        return "\(a)"
-    }
+class Account {
+    var balance: Int = 0
 }
 
+struct Transaction {
+    let amount: Int
+}
 
+// This appears pure but isn't—reference types allow mutation
+func processTransaction(account: Account, transaction: Transaction) {
+    account.balance += transaction.amount // Side effect!
+}
+
+// Truly pure version returns new state
+func calculateNewBalance(currentBalance: Int, transaction: Transaction) -> Int {
+    return currentBalance + transaction.amount
+}
 ```
 
-Why is it that a pure function can reduce complexity of the code? In graph theory, when you represent the code as a graph of relationships where read and write are edges to variables that contain state, the pure function only writes/reads values internal to its scope. It produces values and never writes those values to the system. 
+Key insight: Swift's value types (structs) naturally encourage pure functions, while reference types (classes) require discipline to avoid unintended mutations.
 
-If it does that, then we can guarantee that it wouldn't modify the state of the system. It's as simple as that. 
+### Member Functions in Classes
 
-What about structs and functions on structs? Well, that's an exercise left to you. Is this an appropriate solution for some cases? 
+```swift
+class BankAccount {
+    private var balance: Int = 0
+    
+    // Pure member function - doesn't reference self's mutable state
+    func calculateInterest(principal: Int, rate: Double) -> Int {
+        return Int(Double(principal) * rate)
+    }
+    
+    // Impure - modifies state
+    func applyInterest(rate: Double) {
+        let interest = calculateInterest(principal: balance, rate: rate)
+        balance += interest
+    }
+}
+```
 
-Impure Functions:
-Any function that does not return a value or writes to the 3 state types above is an impure function. They always exist in the system - all iOS applications require that you manipulate a collection of objects, e.g., a list of objects. That function that you write to perform that operation is impure, assuming you have a list in an object. It will have to modify self to write or change that list. I.e., self.list.deleteAt(i)
+## The Graph Theory Perspective
 
+Viewing code through graph theory illuminates why pure functions reduce complexity:
 
+- **Nodes**: Variables and state
+- **Edges**: Read/write relationships
+- **Pure functions**: Isolated subgraphs with no outgoing edges
+
+Pure functions create localized computation graphs disconnected from the larger system state graph. This isolation is what makes them so powerful—changes propagate predictably within boundaries.
+
+## Best Practices for OSFC
+
+1. **Identify boundaries**: Clearly separate pure business logic from stateful coordination
+2. **Push effects outward**: Keep side effects at the system's edges
+3. **Leverage type systems**: Use Swift's structs for data, classes for coordination
+4. **Test the core**: Focus testing efforts on pure functions
+5. **Document effects**: When functions must be impure, clearly document their side effects
+
+## Conclusion
+
+Object-Oriented Shell, Functional Core isn't about choosing sides in the OOP vs. FP debate. It's about leveraging each paradigm's strengths: OOP's encapsulation for managing effects and FP's purity for expressing logic.
+
+In your next project, try identifying one complex business rule and extracting it into pure functions. You'll likely find the resulting code more testable, readable, and maintainable. The journey toward better architecture begins with a single pure function.
+
+*Next in this series: We'll explore advanced patterns for chaining pure functions and managing asynchronous operations within the OSFC paradigm.*

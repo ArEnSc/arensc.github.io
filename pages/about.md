@@ -70,10 +70,10 @@ I'm currently accepting new consulting engagements for:
 - Team mentoring and technical leadership
 - ML/AI integration projects
 
-<div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;">
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; align-items: center;">
   <a href="mailto:michael.chung@databites.ca" class="btn btn-primary">CONTACT ME FOR A CONSULTATION</a>
-  <a href="https://github.com/ArEnSc" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">VIEW MY GITHUB</a>
-  <a href="https://www.linkedin.com/in/michael-c-31662a38/" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">CONNECT ON LINKEDIN</a>
+  <a href="https://github.com/ArEnSc" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary); margin: 0;" target="_blank">VIEW MY GITHUB</a>
+  <a href="https://www.linkedin.com/in/michael-c-31662a38/" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary); margin: 0;" target="_blank">CONNECT ON LINKEDIN</a>
 </div>
 
 ---

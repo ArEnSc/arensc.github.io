@@ -1,18 +1,16 @@
 ---
-layout: page
+layout: default
 title: Resume
 permalink: /resume/
-feature-img: "assets/img/pexels/code-coding-cyberspace.jpg"
-tags: [About, Resume]
 ---
 
-## Michael Chung - Full-Stack Software Consultant
+# Michael Chung - Full-Stack Software Consultant
 
-### Quick Links
-
-[Download Resume (PDF)](/assets/MichaelChungResume.pdf){: .btn .btn-primary}
-[View My LinkedIn](https://www.linkedin.com/in/michael-c-31662a38/){: .btn .btn-secondary}
-[GitHub Profile](https://github.com/ArEnSc){: .btn .btn-secondary}
+<div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0;">
+  <a href="/assets/MichaelChungResume.pdf" class="btn btn-primary">DOWNLOAD RESUME (PDF)</a>
+  <a href="https://www.linkedin.com/in/michael-c-31662a38/" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">VIEW MY LINKEDIN</a>
+  <a href="https://github.com/ArEnSc" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">GITHUB PROFILE</a>
+</div>
 
 ### Core Competencies
 
@@ -60,5 +58,7 @@ I offer comprehensive consulting services including:
 
 I'm currently accepting new consulting engagements. Whether you need help architecting a new system, optimizing existing code, or integrating cutting-edge AI capabilities, I'm here to help.
 
-[Contact Me](mailto:michael.chung@databites.ca){: .btn .btn-primary}
-[Download Full Resume](/assets/MichaelChungResume.pdf){: .btn .btn-secondary}
+<div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;">
+  <a href="mailto:michael.chung@databites.ca" class="btn btn-primary">CONTACT ME</a>
+  <a href="/assets/MichaelChungResume.pdf" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);">DOWNLOAD FULL RESUME</a>
+</div>

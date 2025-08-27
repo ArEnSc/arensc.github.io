@@ -1,16 +1,14 @@
 ---
-layout: page
+layout: default
 title: About Me
 permalink: /about/
-feature-img: "assets/img/about-iphone.jpg"
-tags: [About, Archive]
 ---
 
 ## Transforming Ideas into Scalable Solutions
 
 I'm Michael Chung, a Full-Stack Software Consultant with over a decade of experience architecting and delivering enterprise-grade applications. I specialize in bridging the gap between complex technical requirements and elegant, maintainable solutions.
 
-[Download My Resume (PDF)](/assets/MichaelChungResume.pdf){: .btn .btn-primary}
+<a href="/assets/MichaelChungResume.pdf" class="btn btn-primary">DOWNLOAD MY RESUME (PDF)</a>
 
 ## What I Do
 
@@ -72,9 +70,11 @@ I'm currently accepting new consulting engagements for:
 - Team mentoring and technical leadership
 - ML/AI integration projects
 
-[Contact Me for a Consultation](/contact){: .btn .btn-primary} 
-[View My GitHub](https://github.com/ArEnSc){: .btn .btn-secondary}
-[Connect on LinkedIn](https://www.linkedin.com/in/michael-c-31662a38/){: .btn .btn-secondary}
+<div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;">
+  <a href="mailto:michael.chung@databites.ca" class="btn btn-primary">CONTACT ME FOR A CONSULTATION</a>
+  <a href="https://github.com/ArEnSc" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">VIEW MY GITHUB</a>
+  <a href="https://www.linkedin.com/in/michael-c-31662a38/" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">CONNECT ON LINKEDIN</a>
+</div>
 
 ---
 

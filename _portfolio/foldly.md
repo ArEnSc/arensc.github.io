@@ -6,11 +6,26 @@ gallery: "assets/img/portfolio/foldly/app/"
 description: "A travel journal app with custom albums, photo organization using AI-powered image recognition, and social features. Built from scratch with 60fps scrolling performance."
 ---
 
-![image]({{ page.img | relative_url }})
+# {{ page.title }}
 
-Foldly was a project that required the development of a travel journal application from scratch. This app allowed users to create custom albums to organize photos. Foldly utilized tags and a embedded database that was using image content recognition to assist with organization.
+<div style="display: flex; align-items: flex-start; gap: 32px; margin-bottom: 32px; flex-wrap: wrap;">
+  <img src="{{ page.img | relative_url }}" alt="{{ page.title }} icon" style="width: 120px; height: 120px; object-fit: contain; border-radius: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <div style="flex: 1; min-width: 300px;">
+    <p style="font-size: 18px; line-height: 28px; margin: 0;">Foldly was a travel journal application that allowed users to create custom albums to organize photos. The app utilized AI-powered image recognition and tagging to assist with photo organization.</p>
+    <div style="margin-top: 16px; display: flex; gap: 24px;">
+      <div>
+        <div style="font-size: 24px; font-weight: 500; color: var(--md-primary);">5K</div>
+        <div style="font-size: 14px; color: rgba(0,0,0,0.6);">Daily Active Users</div>
+      </div>
+      <div>
+        <div style="font-size: 24px; font-weight: 500; color: var(--md-primary);">60fps</div>
+        <div style="font-size: 14px; color: rgba(0,0,0,0.6);">Smooth Scrolling</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-Building the app from scratch, I built the following features:
+## Major Contributions
 
 1. The main photo and video scroll feed:
 	+ I worked on building the UI using ASDK, also known as Texture, by Pintrest and Facebook. This allowed the feed to run at 60 frames per second as most of the work was done on a background thread. This was implemented using a frame and internal stacklayout. This allowed a smooth user experience.
@@ -25,6 +40,37 @@ Building the app from scratch, I built the following features:
 	Successfully marketed the app and helped build an audience.
 	+ The app captured an audience of 5k Daily active users then was promptly shutdown after the business model was not shown to profitable.
 
-{% include gallery.html gallery_path=page.gallery %}
+## App Screenshots
+
+<style>
+  .app-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 32px 0;
+  }
+  
+  .app-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    background: #f5f5f5;
+  }
+  
+  .app-gallery img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+</style>
+
+<div class="app-gallery">
+  <img src="/assets/img/portfolio/foldly/app/b.jpg" alt="Foldly screenshot">
+  <img src="/assets/img/portfolio/foldly/app/c.jpg" alt="Foldly screenshot">
+  <img src="/assets/img/portfolio/foldly/app/d.jpg" alt="Foldly screenshot">
+  <img src="/assets/img/portfolio/foldly/app/e.png" alt="Foldly screenshot">
+  <img src="/assets/img/portfolio/foldly/app/g.jpg" alt="Foldly screenshot">
+</div>
 
 

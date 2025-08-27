@@ -6,7 +6,7 @@ permalink: /portfolio/
 
 # Portfolio
 
-<p style="font-size: 20px; line-height: 28px; color: rgba(0,0,0,0.6); margin-bottom: 32px;">iOS Apps and Projects I've Worked On</p>
+<p style="font-size: 20px; line-height: 28px; color: rgba(0,0,0,0.6); margin-bottom: 32px;">Client iOS Apps I've Built</p>
 
 <style>
   .portfolio-grid {

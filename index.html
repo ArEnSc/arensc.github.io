@@ -1,65 +1,62 @@
 ---
-layout: jxnl-inspired
+layout: jxnl-blog
 ---
 
 <!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <h1>Welcome to DataBites Labs</h1>
-    <p class="hero-subtitle">iOS Apps, Generative AI, and Deep Learning</p>
-    <div class="hero-buttons">
-      <a href="/blog" class="btn btn-primary">Read Blog</a>
-      <a href="/about" class="btn btn-secondary">Learn More</a>
+<section class="hero-section">
+  <h1 class="hero-title">Michael Chung</h1>
+  <div class="hero-subtitle">
+    <p>Senior Software Engineer specializing in iOS development, Generative AI, and Deep Learning. Building innovative mobile applications and exploring the frontiers of artificial intelligence.</p>
+    <p>Currently working as a Full Stack Consultant, helping companies leverage modern technology to solve complex problems.</p>
+  </div>
+</section>
+
+<!-- Resources Section -->
+<section class="cards-section">
+  <h2 class="section-title">📚 Free Resources</h2>
+  <div class="cards-grid">
+    <div class="card" onclick="window.location.href='/portfolio'">
+      <div class="card-icon">💼</div>
+      <h3 class="card-title">Portfolio</h3>
+      <p class="card-description">Check out my latest projects and open source contributions</p>
+    </div>
+    <div class="card" onclick="window.location.href='https://github.com/{{ site.theme_settings.github }}'">
+      <div class="card-icon">🚀</div>
+      <h3 class="card-title">Open Source</h3>
+      <p class="card-description">Explore my GitHub repositories and contributions</p>
+    </div>
+    <div class="card" onclick="window.location.href='/blog'">
+      <div class="card-icon">✍️</div>
+      <h3 class="card-title">Blog Posts</h3>
+      <p class="card-description">Technical articles on iOS, AI, and software engineering</p>
+    </div>
+    <div class="card" onclick="window.location.href='/about#contact'">
+      <div class="card-icon">📬</div>
+      <h3 class="card-title">Get in Touch</h3>
+      <p class="card-description">Let's discuss your next project or collaboration</p>
     </div>
   </div>
 </section>
 
-<!-- Latest Posts Section -->
-<section class="posts-section">
-  <div class="container">
-    <h2 class="section-title">Latest Posts</h2>
-    <div class="posts-grid">
-      {% for post in site.posts limit:6 %}
-        <article class="post-card">
-          <h3 class="post-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </h3>
-          <div class="post-meta">
-            {{ post.date | date: "%B %-d, %Y" }}
-            {% if post.tags.size > 0 %} • {{ post.tags | join: ", " }}{% endif %}
-          </div>
-          <div class="post-excerpt">
-            {{ post.excerpt | strip_html | truncatewords: 30 }}
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="/blog" class="btn btn-secondary">View All Posts →</a>
-    </div>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section class="features-section">
-  <div class="container">
-    <h2 class="section-title">What I Do</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">📱</div>
-        <h3 class="feature-title">iOS Development</h3>
-        <p>Building beautiful, performant iOS applications with Swift and SwiftUI</p>
+<!-- Latest Posts -->
+<section class="post-list">
+  <h2 class="section-title">✨ Latest Posts</h2>
+  {% for post in site.posts limit:5 %}
+    <article class="post-item">
+      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+      <h3 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <div class="post-excerpt">
+        {{ post.excerpt | strip_html | truncatewords: 40 }}
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h3 class="feature-title">Generative AI</h3>
-        <p>Exploring cutting-edge AI models and their practical applications</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <h3 class="feature-title">Deep Learning</h3>
-        <p>Implementing neural networks and ML solutions for real-world problems</p>
-      </div>
-    </div>
-  </div>
+      {% if post.tags.size > 0 %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
 </section>

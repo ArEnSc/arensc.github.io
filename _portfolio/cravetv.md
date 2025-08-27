@@ -46,29 +46,33 @@ description: "Bell Media's streaming app with 400K daily active users and 3M+ do
 <style>
   .app-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    margin: 24px 0;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 32px 0;
   }
   
   .app-gallery img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    background: #f5f5f5;
   }
   
   .app-gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   }
 </style>
 
 <div class="app-gallery">
-  {% assign image_files = site.static_files | where: "path", page.gallery %}
-  {% for image in image_files limit:6 %}
-    <img src="{{ image.path | relative_url }}" alt="CraveTV screenshot">
-  {% endfor %}
+  <img src="/assets/img/portfolio/crave/app/a.png" alt="CraveTV screenshot">
+  <img src="/assets/img/portfolio/crave/app/b.png" alt="CraveTV screenshot">
+  <img src="/assets/img/portfolio/crave/app/c.png" alt="CraveTV screenshot">
+  <img src="/assets/img/portfolio/crave/app/d.png" alt="CraveTV screenshot">
+  <img src="/assets/img/portfolio/crave/app/g.png" alt="CraveTV screenshot">
+  <img src="/assets/img/portfolio/crave/app/h.png" alt="CraveTV screenshot">
 </div>
 
 

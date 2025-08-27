@@ -11,8 +11,8 @@ permalink: /portfolio/
 <style>
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
     margin-bottom: 48px;
   }
   
@@ -35,22 +35,24 @@ permalink: /portfolio/
   
   .portfolio-image {
     width: 100%;
-    height: 200px;
-    background: #f5f5f5;
+    height: 180px;
+    background: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
   }
   
   .portfolio-image img {
-    width: auto;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
+    border-radius: 20px;
   }
   
   .portfolio-content {
-    padding: 24px;
+    padding: 20px;
   }
   
   .portfolio-title {
@@ -101,7 +103,7 @@ permalink: /portfolio/
           <div class="portfolio-date">{{ project.date }}</div>
         {% endif %}
         <p class="portfolio-description">
-          {{ project.excerpt | strip_html | truncatewords: 30 }}
+          {{ project.content | strip_html | truncatewords: 25 }}
         </p>
         <div class="portfolio-arrow">
           View Details

@@ -2,6 +2,7 @@
 layout: post
 title: Matplotlib using the Basic OOP API and Graphing with Colors 
 tags: [Matplotlib, OOP, Tutorial, Python, Colors]
+categories: [Software Architecture]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->

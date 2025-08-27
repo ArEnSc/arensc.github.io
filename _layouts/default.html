@@ -187,6 +187,12 @@
       cursor: pointer;
     }
 
+    /* Footer styles */
+    footer {
+      margin-left: 256px;
+      transition: margin-left 0.3s;
+    }
+    
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -206,6 +212,10 @@
 
       .app-bar-title {
         margin-left: 8px;
+      }
+      
+      footer {
+        margin-left: 0;
       }
     }
 
@@ -273,6 +283,23 @@
       <span class="material-icons">article</span>
       Blog
     </a>
+    <div style="padding-left: 56px;">
+      <a href="/blog/ai-agents" class="drawer-item {% if page.url == '/blog/ai-agents/' %}active{% endif %}" style="font-size: 14px; padding: 8px 16px;">
+        AI Agents
+      </a>
+      <a href="/blog/ai-native-apps" class="drawer-item {% if page.url == '/blog/ai-native-apps/' %}active{% endif %}" style="font-size: 14px; padding: 8px 16px;">
+        AI Native Apps
+      </a>
+      <a href="/blog/data-science" class="drawer-item {% if page.url == '/blog/data-science/' %}active{% endif %}" style="font-size: 14px; padding: 8px 16px;">
+        Data Science
+      </a>
+      <a href="/blog/ios-development" class="drawer-item {% if page.url == '/blog/ios-development/' %}active{% endif %}" style="font-size: 14px; padding: 8px 16px;">
+        iOS Development
+      </a>
+      <a href="/blog/software-architecture" class="drawer-item {% if page.url == '/blog/software-architecture/' %}active{% endif %}" style="font-size: 14px; padding: 8px 16px;">
+        Software Architecture
+      </a>
+    </div>
     <a href="/about" class="drawer-item {% if page.url == '/about/' %}active{% endif %}">
       <span class="material-icons">person</span>
       About
@@ -310,7 +337,7 @@
         <!-- About Section -->
         <div>
           <h3 style="margin-bottom: 16px; font-weight: 400;">About</h3>
-          <p style="opacity: 0.9; line-height: 1.6;">
+          <p style="opacity: 0.9; line-height: 1.6; word-break: break-word;">
             Full-stack consultant specializing in AI native app development, generative AI, and deep learning solutions.
           </p>
         </div>

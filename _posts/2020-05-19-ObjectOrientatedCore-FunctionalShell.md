@@ -2,6 +2,7 @@
 layout: post 
 title: Object-Oriented Shell, Functional Core - Managing State in Modern Applications
 tags: [Swift, OOP, Functional Programming]
+categories: [Software Architecture]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->

@@ -2,6 +2,7 @@
 layout: post 
 title: Numpy Top Functions used in Data Analysis
 tags: [Numpy, Python, Notes]
+categories: [Data Science]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->

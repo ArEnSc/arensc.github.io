@@ -2,6 +2,7 @@
 layout: post 
 title: Python VirtualEnv
 tags: [VirtualEnv, Python, Notes]
+categories: [Data Science]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->

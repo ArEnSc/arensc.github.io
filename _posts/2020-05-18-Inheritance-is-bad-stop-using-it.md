@@ -2,6 +2,7 @@
 layout: post 
 title: Inheritance is bad - don't use it.
 tags: [Swift, OOP, Functional Programming]
+categories: [Software Architecture]
 feature-img: "assets/img/matplotlib-charts.jpg"
 thumbnail: "assets/img/matplotlib-charts.jpg"
 excerpt_separator: <!--more-->

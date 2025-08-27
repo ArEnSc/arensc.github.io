@@ -1,0 +1,18 @@
+---
+layout: default
+permalink: /debug/
+---
+
+<h1>Debug Categories</h1>
+
+<h2>All Posts Raw Categories:</h2>
+{% for post in site.posts %}
+  <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+    <strong>{{ post.title }}</strong><br>
+    Categories (raw): {{ post.categories | inspect }}<br>
+    Categories (joined): {{ post.categories | join: ", " }}<br>
+    Categories type: {{ post.categories.first | inspect }}<br>
+    Contains "Software Architecture": {% if post.categories contains "Software Architecture" %}YES{% else %}NO{% endif %}<br>
+    First category equals: {% if post.categories.first == "Software Architecture" %}YES{% else %}NO{% endif %}
+  </div>
+{% endfor %}

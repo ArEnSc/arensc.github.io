@@ -308,9 +308,22 @@
       <span class="material-icons">work</span>
       Portfolio
     </a>
+    <a href="/research" class="drawer-item {% if page.url == '/research/' %}active{% endif %}">
+      <span class="material-icons">science</span>
+      Research
+    </a>
+    <div style="padding-left: 56px;">
+      <a href="/research/rwkv" class="drawer-item {% if page.url == '/research/rwkv/' %}active{% endif %}" style="font-size: 14px; padding: 8px 16px;">
+        RWKV Paper
+      </a>
+    </div>
     <a href="/resume" class="drawer-item {% if page.url == '/resume/' %}active{% endif %}">
       <span class="material-icons">description</span>
       Resume
+    </a>
+    <a href="/contact" class="drawer-item {% if page.url == '/contact/' %}active{% endif %}">
+      <span class="material-icons">mail</span>
+      Contact
     </a>
     <div style="border-top: 1px solid rgba(0,0,0,0.12); margin: 8px 0;"></div>
     <a href="https://github.com/{{ site.theme_settings.github }}" class="drawer-item" target="_blank">
@@ -338,7 +351,7 @@
         <div>
           <h3 style="margin-bottom: 16px; font-weight: 400;">About</h3>
           <p style="opacity: 0.9; line-height: 1.6; word-break: break-word;">
-            Full-stack consultant specializing in AI native app development, generative AI, and deep learning solutions.
+            Michael Chung - Staff Gen AI/ML researcher, former CTO at FakeYou.com & Storyteller.ai. Expert in generative AI consulting, small language models (SLMs), AI agents, and RWKV infinite context systems. Specializing in LLM/SLM deployment, multi-agent architectures, and production AI solutions.
           </p>
         </div>
         
@@ -350,6 +363,7 @@
             <a href="/blog" style="color: var(--md-on-primary); text-decoration: none; opacity: 0.9;">Blog</a>
             <a href="/portfolio" style="color: var(--md-on-primary); text-decoration: none; opacity: 0.9;">Portfolio</a>
             <a href="/about" style="color: var(--md-on-primary); text-decoration: none; opacity: 0.9;">About</a>
+            <a href="/contact" style="color: var(--md-on-primary); text-decoration: none; opacity: 0.9;">Contact</a>
           </div>
         </div>
         

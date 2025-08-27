@@ -3,7 +3,7 @@ layout: default
 title: CraveTV 2
 img: "assets/img/portfolio/crave/app_icon.png"
 gallery: "assets/img/portfolio/crave/app/"
-date: March 2018 - March 2019
+project_date: March 2018 - March 2019
 description: "Bell Media's streaming app with 400K daily active users and 3M+ downloads. Led development of offline downloads, accessibility features, and cross-platform support."
 ---
 
@@ -12,7 +12,7 @@ description: "Bell Media's streaming app with 400K daily active users and 3M+ do
 <div style="display: flex; align-items: flex-start; gap: 32px; margin-bottom: 32px; flex-wrap: wrap;">
   <img src="{{ page.img | relative_url }}" alt="{{ page.title }} icon" style="width: 120px; height: 120px; object-fit: contain; border-radius: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <div style="flex: 1; min-width: 300px;">
-    <div style="font-size: 18px; color: rgba(0,0,0,0.6); margin-bottom: 8px;">{{ page.date }}</div>
+    <div style="font-size: 18px; color: rgba(0,0,0,0.6); margin-bottom: 8px;">{{ page.project_date }}</div>
     <p style="font-size: 18px; line-height: 28px; margin: 0;">At Bell Media, I worked on the popular CraveTV 2 mobile application. This app required extensive cross communication and work across the organization.</p>
     <div style="margin-top: 16px; display: flex; gap: 24px;">
       <div>

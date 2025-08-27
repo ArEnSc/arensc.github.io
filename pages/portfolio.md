@@ -99,8 +99,10 @@ permalink: /portfolio/
       </div>
       <div class="portfolio-content">
         <h3 class="portfolio-title">{{ project.title }}</h3>
-        {% if project.date %}
-          <div class="portfolio-date">{{ project.date }}</div>
+        {% if project.project_date %}
+          <div class="portfolio-date">{{ project.project_date }}</div>
+        {% elsif project.date %}
+          <div class="portfolio-date">{{ project.date | date: "%B %Y" }}</div>
         {% endif %}
         <p class="portfolio-description">
           {% if project.description %}

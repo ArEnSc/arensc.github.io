@@ -103,7 +103,11 @@ permalink: /portfolio/
           <div class="portfolio-date">{{ project.date }}</div>
         {% endif %}
         <p class="portfolio-description">
-          {{ project.content | strip_html | truncatewords: 25 }}
+          {% if project.description %}
+            {{ project.description }}
+          {% else %}
+            {{ project.content | strip_html | truncatewords: 25 }}
+          {% endif %}
         </p>
         <div class="portfolio-arrow">
           View Details

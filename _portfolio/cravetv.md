@@ -4,6 +4,7 @@ title: CraveTV 2
 img: "assets/img/portfolio/crave/app_icon.png"
 gallery: "assets/img/portfolio/crave/app/"
 date: March 2018 - March 2019
+description: "Bell Media's streaming app with 400K daily active users and 3M+ downloads. Led development of offline downloads, accessibility features, and cross-platform support."
 ---
 
 # {{ page.title }}

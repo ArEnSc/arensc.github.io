@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Participation 
-feature-img: "assets/img/portfolio/paction/title.png"
+title: ParticipACTION
 img: "assets/img/portfolio/paction/app_icon.png"
 gallery: "assets/img/portfolio/paction/app/"
-
+description: "Canada's famous fitness app with 100K+ users. Built gamification features including badges, rewards system, and social profiles to encourage healthy living."
 ---
 
 ![image]({{ page.img | relative_url }})

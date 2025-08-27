@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Nura
-feature-img: "assets/img/portfolio/nura/title_hor.png"
 img: "assets/img/portfolio/nura/app_icon.png"
 gallery: "assets/img/portfolio/nura/app/"
+description: "Medical app that measures vitals using iPhone camera. First of its kind technology combining AI/ML with iOS to read heart rate, blood pressure, and stress levels."
 ---
 
 At Nuralogix, I worked as part of a development team on the medical app Nura. It had a unique application and was the first of its kind, where it was able to glean vitals using the standard camera on your iPhone. This app required extensive cross collaboration between AI Scientists and stakeholders. My role was to gather requirements and ensure that usability was at the core of this project, as well as to develop the integration between Machine Learning and iOS devices.. I was also designated to coach the team through the process of building and delivery, as this was their first app. 

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Foldly
-feature-img: "assets/img/portfolio/foldly/title.png"
 img: "assets/img/portfolio/foldly/app_icon.png"
 gallery: "assets/img/portfolio/foldly/app/"
+description: "A travel journal app with custom albums, photo organization using AI-powered image recognition, and social features. Built from scratch with 60fps scrolling performance."
 ---
 
 ![image]({{ page.img | relative_url }})

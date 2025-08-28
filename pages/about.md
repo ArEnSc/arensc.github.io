@@ -32,13 +32,13 @@ As a Full-Stack Software Consultant, I help businesses:
 ### Generative AI & Advanced ML Specialization
 
 **Leadership Experience**: Former CTO at FakeYou.com and Storyteller.ai (raised $3M seed funding)  
-**Research Contributions**: Core contributor to RWKV paper on efficient linear models with infinite context  
+**Research Contributions**: Core contributor to the RWKV paper on efficient linear models with infinite context  
 **Large Language Models**: OpenAI GPT-4, Claude 3.5, Gemini, Llama 3.1, Mistral  
-**Small Language Models**: Phi-3, Gemma, TinyLlama, StableLM - expert in edge deployment  
+**Small Language Models**: Phi-3, Gemma, TinyLlama, StableLM – expert in edge deployment  
 **AI Agents**: Multi-agent systems, autonomous agents, LangChain, CrewAI, AutoGPT  
 **Vector Databases**: Pinecone, Weaviate, Qdrant, Chroma for RAG systems  
 **Model Optimization**: Quantization, distillation, LoRA/QLoRA fine-tuning  
-**Production AI**: vLLM, TGI, Triton inference serving, infinite context processing  
+**Production AI**: vLLM, TGI, Triton Inference Server, infinite context processing  
 
 ## Research Publications
 
@@ -47,10 +47,10 @@ As a Full-Stack Software Consultant, I help businesses:
 
 I contributed to this groundbreaking research on RWKV (Receptance Weighted Key Value), a novel architecture that combines the efficiency of RNNs with the performance of Transformers. Key innovations include:
 
-- **Linear Attention Mechanism**: O(n) complexity vs O(n²) for traditional transformers
+- **Linear Attention Mechanism**: O(n) complexity vs. O(n²) for traditional transformers
 - **Infinite Context Length**: Theoretically unlimited context window
 - **State-Space Formulation**: Efficient sequential processing with parallelizable training
-- **Production Efficiency**: 10-100x lower memory usage for long sequences
+- **Production Efficiency**: 10–100x lower memory usage for long sequences
 - **Open Source Impact**: Democratizing access to efficient large language models
 
 This work enables practical deployment of LLMs in resource-constrained environments and opens new possibilities for processing extremely long documents, continuous learning, and real-time applications.
@@ -60,7 +60,7 @@ This work enables practical deployment of LLMs in resource-constrained environme
 Beyond traditional software development, I bring a unique perspective shaped by entrepreneurial ventures:
 
 ### Databites Academy
-Founded and led Databites, a data science education startup where I:
+Founded and led Databites Academy, a data science education startup where I:
 - Developed comprehensive curriculum for aspiring data scientists
 - Taught complex technical concepts to diverse audiences
 - Built the technical infrastructure for online learning
@@ -70,7 +70,7 @@ These experiences give me a unique ability to understand not just the technical 
 
 ## Why Work With Me
 
-- **Full-Stack Perspective**: I understand the entire technology stack, ensuring seamless integration
+- - **Full-Stack Perspective**: I understand the entire technology stack, ensuring seamless integration
 - **Business Acumen**: Entrepreneurial experience means I think beyond code to business impact
 - **Proven Track Record**: Successfully delivered projects ranging from startups to enterprise clients
 - **Clear Communication**: I translate complex technical concepts into actionable business insights
@@ -93,13 +93,13 @@ I'm currently accepting new consulting engagements for:
 - **Generative AI Consulting**: LLM/SLM strategy, implementation, and optimization
 - **AI Agent Development**: Multi-agent systems and autonomous AI solutions
 - **Small Language Model Deployment**: Edge AI and on-device model optimization
-- Full-stack application development
-- iOS app development and modernization
-- Technical architecture reviews and improvements
-- Team mentoring and technical leadership
-- ML/AI integration projects
+- **Full-Stack Application Development**: Modern web and mobile applications
+- **iOS App Development**: Native apps and modernization projects
+- **Technical Architecture Reviews**: System design and improvements
+- **Team Mentoring**: Technical leadership and best practices
+- **ML/AI Integration**: Production-ready machine learning solutions
 
-Specializing in Gen AI consulting, small language models (SLMs), AI agents, RAG systems, vector databases, and production AI deployment. Expert in implementing GPT-4, Claude, Gemini, Llama, and efficient models like Phi-3 and RWKV.
+Specializing in generative AI consulting, small language models (SLMs), AI agents, RAG systems, vector databases, and production AI deployment. Expert in implementing GPT-4, Claude, Gemini, Llama, and efficient models like Phi-3 and RWKV.
 
 <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; align-items: center;">
   <a href="/contact" class="btn btn-primary">SCHEDULE A CONSULTATION</a>

@@ -60,7 +60,6 @@ RWKV combines:
 
 ### Use Cases I've Implemented
 - **Voice Synthesis** (FakeYou.com): Long-form audio generation
-- **Storytelling** (Storyteller.ai): Coherent narrative generation
 - **Code Analysis**: Understanding entire codebases
 - **Conversational AI**: Multi-turn dialogues without context loss
 

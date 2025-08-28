@@ -171,7 +171,7 @@ permalink: /portfolio/
     </div>
     <div class="client-logo">
       <svg viewBox="0 0 100 100" style="width: 50px; height: 50px;">
-        <path d="M0 0v100l50-50V0H0zm50 50v50h50V0L50 50z" fill="#E50914"/>
+        <path d="M0 0v100h29.1V37.5L70.9 100H100V0H70.9v62.5L29.1 0H0z" fill="#E50914"/>
       </svg>
     </div>
     <div class="client-logo">

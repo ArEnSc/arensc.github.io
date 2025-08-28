@@ -43,7 +43,6 @@ As a Staff Gen AI/ML researcher and former CTO, I bridge the gap between cutting
 
 My research contributions have directly influenced:
 - **FakeYou.com**: Advanced voice synthesis using efficient models
-- **Storyteller.ai**: Long-form narrative generation with context management
 - **Open Source**: Democratizing access to efficient AI through RWKV
 
 ## Collaborations & Speaking

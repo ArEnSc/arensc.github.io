@@ -8,7 +8,7 @@ permalink: /about/
 
 I'm Michael Chung, a Full-Stack Software Consultant with over a decade of experience architecting and delivering enterprise-grade applications. I specialize in bridging the gap between complex technical requirements and elegant, maintainable solutions.
 
-<a href="/assets/MichaelChungResume.pdf" class="btn btn-primary">DOWNLOAD MY RESUME (PDF)</a>
+<a href="/assets/MichaelResumeRecent.pdf" class="btn btn-primary">DOWNLOAD MY RESUME (PDF)</a>
 
 ## What I Do
 

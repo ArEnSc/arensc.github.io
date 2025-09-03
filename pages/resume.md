@@ -7,7 +7,7 @@ permalink: /resume/
 # Michael Chung - Full-Stack Software Consultant
 
 <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0;">
-  <a href="/assets/MichaelChungResume.pdf" class="btn btn-primary">DOWNLOAD RESUME (PDF)</a>
+  <a href="/assets/MichaelResumeRecent.pdf" class="btn btn-primary">DOWNLOAD RESUME (PDF)</a>
   <a href="https://www.linkedin.com/in/michael-c-31662a38/" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">VIEW MY LINKEDIN</a>
   <a href="https://github.com/ArEnSc" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);" target="_blank">GITHUB PROFILE</a>
 </div>
@@ -60,5 +60,5 @@ I'm currently accepting new consulting engagements. Whether you need help archit
 
 <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;">
   <a href="mailto:michael.chung@databites.ca" class="btn btn-primary">CONTACT ME</a>
-  <a href="/assets/MichaelChungResume.pdf" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);">DOWNLOAD FULL RESUME</a>
+  <a href="/assets/MichaelResumeRecent.pdf" class="btn" style="border: 1px solid var(--md-primary); color: var(--md-primary);">DOWNLOAD FULL RESUME</a>
 </div>

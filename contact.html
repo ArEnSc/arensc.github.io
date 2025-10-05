@@ -5,86 +5,62 @@ permalink: /contact/
 
 <style>
 .contact-container {
-  max-width: 1000px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.qualification-info {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f3e5f5;
-  border-radius: 8px;
-  border-left: 4px solid #673AB7;
-}
-
-.calendly-inline-widget {
-  min-width: 320px;
-  height: 700px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.booking-info {
-  margin-top: 30px;
-  padding: 20px;
+.status-box {
   background-color: #f8f9fa;
   border-radius: 8px;
-  font-size: 14px;
-  color: #666;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.booking-info h3 {
+.status-box h1 {
+  margin-top: 0;
   color: #333;
-  margin-bottom: 10px;
 }
 
-.booking-info ul {
-  margin: 10px 0;
-  padding-left: 20px;
+.status-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.linkedin-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-color: #0a66c2;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.linkedin-link:hover {
+  background-color: #004182;
 }
 
 @media (max-width: 768px) {
   .contact-container {
-    padding: 10px;
+    padding: 20px 15px;
   }
-  
-  .calendly-inline-widget {
-    height: 650px;
+
+  .status-box {
+    padding: 25px 20px;
   }
 }
 </style>
 
 <div class="contact-container">
-  <h1>Schedule a Consultation</h1>
-  
-  <div class="qualification-info">
-    <p><strong>I specialize in:</strong></p>
-    <ul>
-      <li>Generative AI Consulting (LLMs, SLMs, AI Agents)</li>
-      <li>Small Language Model Deployment & Edge AI</li>
-      <li>Multi-Agent Systems & Autonomous AI</li>
-      <li>Production AI Architecture & Optimization</li>
-      <li>Full-Stack AI Application Development</li>
-    </ul>
-    <p>Book a 30-minute consultation to discuss your Gen AI project.</p>
-  </div>
-
-  <!-- Calendly inline widget begin -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/databites/consulting?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <!-- Calendly inline widget end -->
-
-  <div class="booking-info">
-    <h3>Before our call:</h3>
-    <ul>
-      <li>Please have a clear idea of your project scope</li>
-      <li>Know your approximate budget range</li>
-      <li>Understand your timeline requirements</li>
-      <li>Prepare any technical questions you may have</li>
-    </ul>
-    
-    <p><strong>Note:</strong> This consultation is for serious inquiries only. I focus on projects that align with my expertise in AI and software development. Minimum project budget is typically $10,000.</p>
+  <div class="status-box">
+    <h1>Thanks for Reaching Out</h1>
+    <p>I appreciate your interest. I'm currently employed and barred from taking on outside work, so I am not scheduling consultations or responding to new project requests at this time.</p>
+    <p>If you'd like to stay in touch about future opportunities, please connect with me on LinkedIn.</p>
+    <a class="linkedin-link" href="https://www.linkedin.com/in/michael-c-31662a38/" target="_blank" rel="noopener">Connect on LinkedIn</a>
   </div>
 </div>

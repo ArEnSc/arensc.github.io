@@ -34,4 +34,4 @@ Welcome to my AI Coding Tutorial section. This section is under construction as 
 
 ## Stay Updated
 
-Follow me on [LinkedIn](https://www.linkedin.com/in/michael-chung-31662a38/) for updates when new tutorials are published.
+Follow me on [LinkedIn](https://www.linkedin.com/in/michael-c-31662a38/) for updates when new tutorials are published.

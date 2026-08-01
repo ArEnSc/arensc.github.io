@@ -6,6 +6,7 @@ description: "A Blog where I try and sound smart, store notes, and rant about th
               Discuss new developments about iOS, Swift 3.0, Swift 4.2, Swift 5.0, Swift UI, Custom UI Etc.
               Discuss Deep Learning developments and Python, MatplotLib, Tensorflow, Training Models.
               Explore Generative AI, Deep Learning architectures, and cutting-edge ML research." # used by search engines
+google_site_verification: NSakX0OovzTPZx6NKE0TrlmtVxsOtq00p2-OSMD73bw # Search Console; rendered by _layouts/default.html
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
